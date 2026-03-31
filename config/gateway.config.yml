@@ -1,0 +1,42 @@
+http:
+  port: 8080
+
+admin:
+  port: 9876
+  host: localhost
+
+apiEndpoints:
+  stats2025:
+    host: localhost
+    paths:
+      - /stats/2025
+
+serviceEndpoints:
+  playerStatsAPI:
+    url: 'http://localhost:3000'
+
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+  - request-transformer
+
+pipelines:
+  default:
+    apiEndpoints:
+      - stats2025
+    policies:
+      - request-transformer:
+          - action:
+              headers:
+                add:
+                  x-api-key: "'22eEMo8eqk8~3L5Ib42'"
+      - proxy:
+          - action:
+              serviceEndpoint: playerStatsAPI
+              changeOrigin: true
