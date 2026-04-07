@@ -1,20 +1,15 @@
 http:
   port: 8080
-
 admin:
   port: 9876
   host: localhost
-
 apiEndpoints:
-  stats2025:
-    host: localhost
-    paths:
-      - /stats/2025
-
+  playerStatsAPI:
+    host: ${GATEWAY_HOST}
+    paths: '/stats/*'
 serviceEndpoints:
   playerStatsAPI:
-    url: 'http://localhost:3000'
-
+    url: ${PLAYER_STATS_API_URL}
 policies:
   - basic-auth
   - cors
@@ -25,18 +20,18 @@ policies:
   - proxy
   - rate-limit
   - request-transformer
-
 pipelines:
-  default:
+  playerStatsPipeline:
     apiEndpoints:
-      - stats2025
+      - playerStatsAPI
     policies:
-      - request-transformer:
-          - action:
-              headers:
-                add:
-                  x-api-key: "'22eEMo8eqk8~3L5Ib42'"
+      - cors:
+          action:
+            origin: '*'
+            methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+            allowedHeaders: ["Content-Type", "Authorization"]
+            credentials: true
       - proxy:
-          - action:
-              serviceEndpoint: playerStatsAPI
-              changeOrigin: true
+          action:
+            serviceEndpoint: playerStatsAPI
+            stripPath: true
