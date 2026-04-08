@@ -7,9 +7,16 @@ apiEndpoints:
   playerStatsAPI:
     host: ${GATEWAY_HOST}
     paths: '/stats/*'
+  adminAPI:
+    host: ${GATEWAY_HOST}
+    paths: '/admin/*'
+    scopes:
+      - 'admin'
 serviceEndpoints:
   playerStatsAPI:
     url: ${PLAYER_STATS_API_URL}
+  adminAPI:
+    url: "http://localhost:9876"
 policies:
   - basic-auth
   - cors
@@ -34,4 +41,13 @@ pipelines:
       - proxy:
           action:
             serviceEndpoint: playerStatsAPI
+            stripPath: true
+  adminPipeline:
+    apiEndpoints:
+      - adminAPI
+    policies:
+      - key-auth:
+      - proxy:
+          action:
+            serviceEndpoint: adminAPI
             stripPath: true
