@@ -12,7 +12,6 @@ gateway().load(path.join(__dirname, 'config'))
         console.error(`Execution error: ${error}`);
         return;
       }
-      if (stdout) console.log(`Output: ${stdout}`);
       if (stderr) console.error(`Error Output: ${stderr}`);
     });
   })
