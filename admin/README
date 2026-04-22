@@ -1,0 +1,13 @@
+Fantasy Baseball API Management Service 
+- Generate new api key and secrets to use for Fantasy Baseball API
+
+Request
+```
+curl -X POST https://fantasybaseballapikeymanagementserver.onrender.com/getAPIKey \                 
+     -H "Content-Type: application/json" \
+     -d '{"username": "mandytang333", "firstname": "mandy", "lastname": "tang", "email": "tangyue123456@gmail.com"}'
+```   
+Response 
+```
+{"keyId":"4a8C1r8UmKGQJCtfNRxvMp","keySecret":"1laxaJH8QMWCRApLf50tzL"}%    
+```
