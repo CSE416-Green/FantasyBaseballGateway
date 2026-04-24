@@ -1,0 +1,15 @@
+{
+    "DraftState": {
+      "drafted_players": []
+    },
+    "players": [
+      { "name": "JP Sears", "position": "P", "ID": 676664 },
+      { "name": "Jeremiah Estrada", "position": "P", "ID": 669093 },
+      { "name": "Clayton Beeter", "position": "P", "ID": 690925},
+      { "name": "Clay Holmes", "position": "P", "ID": 605280 },
+      { "name": "Spencer Shellenbach", "position": "P", "ID": 680885 }
+    ],
+    "maxNextCost": 3,
+    "baseSalary": 1,
+    "remainingSpots": 1
+  }

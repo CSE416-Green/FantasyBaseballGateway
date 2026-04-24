@@ -1,0 +1,16 @@
+
+{
+    "DraftState": {
+      "drafted_players": []
+    },
+    "players": [
+      { "name": "William Contreras", "position": "C", "ID": 661388 },
+      { "name": "Fernando Tatis", "position": "OF", "ID": 665487 },
+      { "name": "Mookie Betts", "position": "SS", "ID": 605141 },
+      { "name": "Ketel Marte", "position": "OF", "ID": 606466 },
+      { "name": "Bryce Harper", "position": "1B", "ID": 547180 }
+    ],
+    "maxNextCost": 92,
+    "baseSalary": 1,
+    "remainingSpots": 15
+  }
