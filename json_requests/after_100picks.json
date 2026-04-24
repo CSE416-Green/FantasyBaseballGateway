@@ -1,0 +1,41 @@
+{
+    "DraftState": {
+      "drafted_players": [
+        { "pick": 1, "player": "William Contreras", "position": "C", "won_by": "Team D", "salary": 25 },
+        { "pick": 2, "player": "Daylen Lile", "position": "OF", "won_by": "Team E", "salary": 12 },
+        { "pick": 3, "player": "Fernando Tatis", "position": "OF", "won_by": "Team H", "salary": 43 },
+        { "pick": 4, "player": "Mookie Betts", "position": "SS", "won_by": "Team D", "salary": 28 },
+        { "pick": 5, "player": "Ketel Marte", "position": "OF", "won_by": "Team F", "salary": 38 },
+        { "pick": 6, "player": "Marcus Semien", "position": "2B", "won_by": "Team F", "salary": 18 },
+        { "pick": 7, "player": "Bryce Harper", "position": "1B", "won_by": "Team C", "salary": 36 },
+        { "pick": 8, "player": "Bo Bichette", "position": "SS/3B", "won_by": "Team H", "salary": 33 },
+        { "pick": 9, "player": "Ozzie Albies", "position": "2B", "won_by": "Team G", "salary": 25 },
+        { "pick": 10, "player": "Eugenio Suarez", "position": "3B", "won_by": "Team F", "salary": 25 },
+        { "pick": 17, "player": "Otto Lopez", "position": "2B/SS", "won_by": "Team A", "salary": 13 },
+        { "pick": 19, "player": "Matt Chapman", "position": "3B", "won_by": "Team A", "salary": 20 },
+        { "pick": 21, "player": "Matt Olson", "position": "1B", "won_by": "Team A", "salary": 35 },
+        { "pick": 29, "player": "Brandon Lowe", "position": "2B", "won_by": "Team A", "salary": 18 },
+        { "pick": 30, "player": "Devin Williams", "position": "P", "won_by": "Team A", "salary": 18 },
+        { "pick": 31, "player": "Ian Happ", "position": "OF", "won_by": "Team A", "salary": 17 },
+        { "pick": 42, "player": "Teoscar Hernandez", "position": "OF", "won_by": "Team A", "salary": 18 },
+        { "pick": 47, "player": "Joe Musgrove", "position": "P", "won_by": "Team A", "salary": 5 },
+        { "pick": 48, "player": "Carlos Santana", "position": "1B", "won_by": "Team A", "salary": 5 },
+        { "pick": 56, "player": "Noelvi Marte", "position": "OF", "won_by": "Team A", "salary": 22 },
+        { "pick": 67, "player": "Tanner Scott", "position": "P", "won_by": "Team A", "salary": 2 },
+        { "pick": 92, "player": "Ben Brown", "position": "P", "won_by": "Team A", "salary": 1 },
+        { "pick": 93, "player": "Tobias Meyer", "position": "P", "won_by": "Team A", "salary": 2 },
+        { "pick": 97, "player": "Gavin Sheets", "position": "OF", "won_by": "Team A", "salary": 4 },
+        { "pick": 100, "player": "Luis Torrens", "position": "C", "won_by": "Team A", "salary": 1 }
+      ]
+    },
+    "players": [
+      { "name": "Sean Manaea", "position": "P", "ID": 640455 },
+      { "name": "Dustin May", "position": "P", "ID": 680694 },
+      { "name": "Marcell Ozuna", "position": "OF", "ID": 542303 },
+      { "name": "Mark Vientos", "position": "3B", "ID": 683148 },
+      { "name": "Keibert Ruiz", "position": "C", "ID": 660688 }
+    ],
+    "maxNextCost": 5,
+    "baseSalary": 1,
+    "remainingSpots": 3
+  }
