@@ -23,6 +23,3 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Deploy to Render
-        run: curl -s -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
