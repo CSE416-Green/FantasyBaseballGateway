@@ -10,11 +10,11 @@ function getRequestUrl() {
 export default function GetAPIKeyPage() {
   const [form, setForm] = useState({ username: "", firstName: "", lastName: "", email: "" });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const res = await fetch(
         `${"http://localhost:3001"}/getAPIKey`,{
