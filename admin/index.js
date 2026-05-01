@@ -1,9 +1,13 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
-const port = 3000
+const port = 3001
 require('dotenv').config();
 
 app.use(express.json());
+app.use(cors({
+  origin: "*"
+}));
 
 const url = process.env.GATEWAY_HOST; 
 const key = process.env.ADMIN_API_KEY_ID;
