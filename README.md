@@ -16,7 +16,9 @@ curl https://fantasybaseballgateway.onrender.com/admin/apps -H "Authorization:ap
 
 ### Local development 
 1. make an .env file with the content in .env.local
-
+```bash
+cp .env.local .env
+```
 2. start the gateway
 ```bash
 npm run start 
