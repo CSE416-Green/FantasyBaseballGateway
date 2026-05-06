@@ -8,6 +8,9 @@ eg user create -p 'username=admin' -p 'firstname=admin' -p 'lastname=admin'
 
 eg scopes create admin
 
+echo $ADMIN_API_KEY_ID
+echo $ADMIN_API_KEY_SECRET
+
 eg credentials create -c admin -t key-auth -p "keyId=${ADMIN_API_KEY_ID}" -p "keySecret=${ADMIN_API_KEY_SECRET}" -p "scopes=admin"
 
 eg user create -p 'username=cse416-team-green' -p 'firstname=Hello' -p 'lastname=World'
