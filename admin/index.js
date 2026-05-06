@@ -33,6 +33,7 @@ app.post('/getAPIKey', async (req, res) => {
   )
 
   if (!addUserRes.ok) {
+    console.log(await addUserRes.json())
     return res.status(500).json({message: `failed to register user to gateway control plane`});
   }
 
@@ -52,6 +53,7 @@ app.post('/getAPIKey', async (req, res) => {
     });
 
   if (!createCredentialRes.ok) {
+    console.log(await addUserRes.json())
     return res.status(500).json({message: "failed to create credential from gateway control plane"});
   }
 
