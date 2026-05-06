@@ -1,7 +1,10 @@
 # Core
 db:
   redis:
-    emulate: true
+    emulate: ${REDIS_EMULATE:-false}
+    host: ${REDIS_HOST:-localhost}
+    port: ${REDIS_PORT:-6379}
+    password: ${PASSWORD:-password}
     namespace: EG
 
 #plugins:
