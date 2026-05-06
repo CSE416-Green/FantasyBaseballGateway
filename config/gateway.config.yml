@@ -40,18 +40,10 @@ pipelines:
             allowedHeaders: ["Content-Type", "Authorization"]
             credentials: true
       - rate-limit:
-            condition:
-              name: hostMatch
-              pattern: localhost.*
-            action:
-              max: 5
-              windowMs: 60000
-              rateLimitBy: "${req.hostname}"
-      - rate-limit:
-            action:
-              max: 500
-              windowMs: 60000
-              rateLimitBy: "${req.hostname}"
+          action:
+            max: 20
+            windowMs: 60000
+            rateLimitBy: "${req.hostname}"
       - proxy:
           action:
             serviceEndpoint: playerStatsAPI
