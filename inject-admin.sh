@@ -2,11 +2,7 @@
 
 echo "Injecting admin API configuration into Express Gateway..."
 
-while IFS='=' read -r key value; do
-  if [ -z "${!key}" ]; then
-    export "$key=$value"
-  fi
-done < .env
+export $(cat .env | xargs) 
 
 eg user create -p 'username=admin' -p 'firstname=admin' -p 'lastname=admin'
 
