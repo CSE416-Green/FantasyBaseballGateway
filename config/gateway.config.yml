@@ -41,8 +41,8 @@ pipelines:
             credentials: true
       - rate-limit:
             condition:
-              name: hostMatch
-              pattern: localhost.*
+              name: express
+              expression: "req.hostname === 'localhost' || req.hostname === '127.0.0.1'"            
             action:
               max: 5
               windowMs: 60000
