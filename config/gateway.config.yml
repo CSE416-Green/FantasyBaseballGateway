@@ -6,12 +6,12 @@ admin:
 apiEndpoints:
   playerStatsAPI:
     host: ${GATEWAY_HOST}
-    paths: '/api/*'
+    paths: "/api/*"
   adminAPI:
     host: ${GATEWAY_HOST}
-    paths: '/admin/*'
+    paths: "/admin/*"
     scopes:
-      - 'admin'
+      - "admin"
 serviceEndpoints:
   playerStatsAPI:
     url: ${PLAYER_STATS_API_URL}
@@ -22,6 +22,7 @@ policies:
   - cors
   - expression
   - key-auth
+  - ip-whitelist
   - log
   - oauth2
   - proxy
@@ -32,16 +33,24 @@ pipelines:
     apiEndpoints:
       - playerStatsAPI
     policies:
+      - ip-whitelist:
+          action:
+            allowedIPs:
+              - "127.0.0.1"
+              - "::1"
+              - ${WHITELIST_IP_PROD:-}
+            statusCode: 403
+            message: "Forbidden"
       - key-auth:
       - cors:
           action:
-            origin: '*'
+            origin: "*"
             methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
             allowedHeaders: ["Content-Type", "Authorization"]
             credentials: true
       - rate-limit:
           action:
-            max: 20
+            max: ${RATE_LIMIT_MAX:-100}
             windowMs: 60000
             rateLimitBy: "${req.hostname}"
       - proxy:
