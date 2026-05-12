@@ -7,9 +7,13 @@ db:
     password: ${PASSWORD:-password}
     namespace: EG
 
+plugins:
+  ip-whitelist:
+    package: express-gateway-plugin-ip-whitelist
+
 #plugins:
-  # express-gateway-plugin-example:
-  #   param1: 'param from system.config' 
+# express-gateway-plugin-example:
+#   param1: 'param from system.config'
 
 crypto:
   cipherKey: sensitiveKey
