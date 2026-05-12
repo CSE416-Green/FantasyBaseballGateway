@@ -38,8 +38,8 @@ pipelines:
             allowedIPs:
               - "127.0.0.1"
               - "::1"
-              - ${WHITELIST_IPv4_PROD:-}
-              - ${WHITELIST_IPv6_PROD:-}
+              - ${WHITELIST_IPv4_PROD-1:-}
+              - ${WHITELIST_IPv4_PROD-2:-}
             statusCode: 403
             message: "Forbidden"
       - key-auth:
