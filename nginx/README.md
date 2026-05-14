@@ -39,8 +39,7 @@ docker run --rm -d \
 Or use port 8081 if port 80 is already in use:
 
 ```bash
-docker rm -f nginx 2>/dev/null || true && docker build -t fantasy-nginx . && docker run --rm -d --name nginx -p 8081:80 --env-file ./.env --add-host=host.docker.internal:host-gateway fantasy-nginx && sleep 2 && docker ps --filter name=nginx --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
-nginx
+docker rm -f nginx 2>/dev/null || true && docker build -t fantasy-nginx . && docker run --rm -d --name nginx -p 8081:80 fantasy-nginx && sleep 2 && docker ps --filter name=nginx --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 ```
 
 ## Testing WebSocket Connection
