@@ -12,6 +12,9 @@ apiEndpoints:
     paths: "/admin/*"
     scopes:
       - "admin"
+  websocketAPI:
+    host: ${GATEWAY_HOST}
+    paths: "/ws/*"
 serviceEndpoints:
   playerStatsAPI:
     url: ${PLAYER_STATS_API_URL}
@@ -28,7 +31,32 @@ policies:
   - proxy
   - rate-limit
   - request-transformer
+  - terminate
 pipelines:
+  websocketPipeline:
+    apiEndpoints:
+      - websocketAPI
+    policies:
+      - ip-whitelist:
+          action:
+            allowedIPs:
+              - "127.0.0.1"
+              - "::1"
+              - ${WHITELIST_IPv4_PROD-1:-}
+              - ${WHITELIST_IPv4_PROD-2:-}
+              - ${WHITELIST_IPv6_PROD:-}
+            statusCode: 403
+            message: "Forbidden"
+      - key-auth:
+      - rate-limit:
+          action:
+            max: ${RATE_LIMIT_MAX:-100}
+            windowMs: 60000
+            rateLimitBy: "${req.hostname}"
+      - terminate:
+          - action:
+              statusCode: 200
+              body: 'OK'
   playerStatsPipeline:
     apiEndpoints:
       - playerStatsAPI
