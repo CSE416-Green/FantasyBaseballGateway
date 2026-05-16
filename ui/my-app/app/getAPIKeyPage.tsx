@@ -29,8 +29,6 @@ export default function GetAPIKeyPage() {
     });
 
     if (!res.ok) {
-      const msg = await res.json();
-      console.log("request api key failed: ", msg);
       alert("API key generation failed");
       return;
     }
