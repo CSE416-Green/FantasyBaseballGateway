@@ -30,7 +30,8 @@ export default function GetAPIKeyPage() {
 
     if (!res.ok) {
       const msg = await res.json();
-      alert(`request for api key failed: ${msg.message}`);
+      console.log("request api key failed: ", msg);
+      alert("API key generation failed");
       return;
     }
 
