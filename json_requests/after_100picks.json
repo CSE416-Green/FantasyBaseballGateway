@@ -37,5 +37,6 @@
     ],
     "maxNextCost": 5,
     "baseSalary": 1,
-    "remainingSpots": 3
+    "remainingSpots": 3,
+    "year":2026
   }
